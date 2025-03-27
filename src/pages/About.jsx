@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-pink-50">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
@@ -60,7 +60,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-semibold mb-4">Quality</h3>
               <p className="text-gray-600">
@@ -71,7 +71,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-semibold mb-4">Style</h3>
               <p className="text-gray-600">
@@ -82,7 +82,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-semibold mb-4">Sustainability</h3>
               <p className="text-gray-600">

@@ -42,7 +42,7 @@ const Shop = () => {
     });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-pink-50">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
@@ -68,8 +68,8 @@ const Shop = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-black text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? 'bg-pink-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-pink-100'
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -81,7 +81,7 @@ const Shop = () => {
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full md:w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full md:w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"
           />
         </div>
 
@@ -107,7 +107,7 @@ const Shop = () => {
                   <span className="text-xl font-bold">${product.price}</span>
                   <button
                     onClick={() => addToCart(product)}
-                    className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+                    className="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors"
                   >
                     Add to Cart
                   </button>
