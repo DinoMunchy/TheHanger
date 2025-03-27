@@ -73,20 +73,17 @@ const Navbar = () => {
 
             <div className="flex items-center space-x-4">
               {/* Cart Link */}
-              <Link
-                to="/cart"
-                className="relative p-3 hover:text-primary transition-colors"
-              >
-                <ShoppingBagIcon className="w-8 h-8" />
-                {getCartItemsCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center">
-                    {getCartItemsCount()}
+              <Link to="/cart" className="relative flex items-center">
+                <ShoppingBagIcon className="h-6 w-6 text-gray-700 hover:text-pink-600 transition-colors" />
+                {cartItemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {cartItemCount}
                   </span>
                 )}
               </Link>
 
               {/* User Menu */}
-              <div className="relative">
+              <div className="relative flex items-center">
                 <button
                   onClick={toggleUserMenu}
                   className="text-gray-700 hover:text-pink-600 transition-colors"
@@ -94,7 +91,7 @@ const Navbar = () => {
                   <UserIcon className="h-6 w-6" />
                 </button>
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg py-1">
                     <Link
                       to="/login"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50"
