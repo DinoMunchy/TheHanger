@@ -70,4 +70,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Deployment
 
-The site is deployed on GitHub Pages at: https://dinomunchy.github.io/TheHanger/ 
+The site is deployed on GitHub Pages at: https://dinomunchy.github.io/TheHanger/
+
+### Deployment Status
+- Last deployment: Checking status...
+- Build status: In progress 
