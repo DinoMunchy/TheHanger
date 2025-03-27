@@ -5,6 +5,7 @@ import { ShoppingBagIcon, HeartIcon } from '@heroicons/react/24/outline';
 import QuickAddModal from '../components/QuickAddModal';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/products';
+import ProductCard from '../components/ProductCard';
 
 const categories = ['all', 'dresses', 'accessories', 'shoes', 'outerwear'];
 const sortOptions = [
@@ -84,26 +85,8 @@ const Shop = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold">${product.price}</span>
-                  <button
-                    onClick={() => addToCart(product)}
-                    className="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors"
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+              <ProductCard product={product} />
             </motion.div>
           ))}
         </div>

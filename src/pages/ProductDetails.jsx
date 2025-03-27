@@ -70,12 +70,79 @@ const ProductDetails = () => {
           <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
           <p className="text-gray-600 mb-6">{product.description}</p>
           <p className="text-2xl font-bold mb-8">${product.price}</p>
-          <button
-            onClick={handleAddToCart}
-            className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            Add to Cart
-          </button>
+
+          {/* Size Selection */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Size:</label>
+            <div className="flex gap-2 flex-wrap">
+              {product.sizes?.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedSize === size
+                      ? 'bg-pink-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-pink-200'
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Color Selection */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Color:</label>
+            <div className="flex gap-2 flex-wrap">
+              {product.colors?.map((color) => (
+                <button
+                  key={color}
+                  onClick={() => setSelectedColor(color)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedColor === color
+                      ? 'bg-pink-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-pink-200'
+                  }`}
+                >
+                  {color}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Quantity Selection */}
+          <div className="mb-8">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Quantity:</label>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                className="px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                -
+              </button>
+              <span className="text-lg font-medium">{quantity}</span>
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                className="px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 bg-pink-600 text-white px-8 py-3 rounded-lg hover:bg-pink-700 transition-colors flex items-center justify-center gap-2"
+            >
+              <ShoppingBagIcon className="h-5 w-5" />
+              Add to Cart
+            </button>
+            <button className="p-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition-colors">
+              <HeartIcon className="h-5 w-5 text-gray-600" />
+            </button>
+          </div>
         </motion.div>
       </div>
     </div>
