@@ -4,170 +4,119 @@ import { Link } from 'react-router-dom';
 const categories = [
   {
     name: 'Dresses',
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://source.unsplash.com/random/800x600?dress',
     description: 'Elegant dresses for every occasion'
   },
   {
     name: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    description: 'Complete your look with our stunning accessories'
+    image: 'https://source.unsplash.com/random/800x600?jewelry',
+    description: 'Complete your look with our accessories'
   },
   {
     name: 'Shoes',
-    image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    description: 'Step out in style with our shoe collection'
+    image: 'https://source.unsplash.com/random/800x600?womens-shoes',
+    description: 'Step out in style with our footwear'
   },
   {
     name: 'Outerwear',
-    image: 'https://images.unsplash.com/photo-1520012218364-3dbe62c99bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    description: 'Stay warm and fashionable with our outerwear'
+    image: 'https://source.unsplash.com/random/800x600?womens-coat',
+    description: 'Stay warm and fashionable'
   }
 ];
 
 const Home = () => {
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 z-0" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+      <div className="relative h-[600px] w-full overflow-hidden">
+        <img
+          src="https://source.unsplash.com/random/1920x1080?womens-clothing-store"
+          alt="Women's Fashion Store"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="text-center text-white">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center md:text-left"
+              className="text-5xl md:text-6xl font-bold mb-6"
             >
-              <motion.h1 
-                className="text-5xl md:text-6xl font-bold text-neutral-dark mb-6 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Discover Your Style
-              </motion.h1>
-              <motion.p 
-                className="text-xl text-neutral-light mb-8 max-w-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                Explore our curated collection of trendy and elegant pieces that will make you feel confident and beautiful.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <Link
-                  to="/shop"
-                  className="btn btn-primary inline-block"
-                >
-                  Shop Now
-                </Link>
-              </motion.div>
-            </motion.div>
+              Welcome to The Hanger
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl md:text-2xl mb-8"
+            >
+              Discover our latest collection of women's fashion
+            </motion.p>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
-                  alt="Fashion Collection"
-                  className="w-full h-[600px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
+              <Link
+                to="/shop"
+                className="bg-white text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-pink-100 transition-colors"
+              >
+                Shop Now
+              </Link>
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Featured Categories */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center mb-4 text-neutral-dark"
-          >
-            Shop by Category
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center text-neutral-light mb-12 max-w-2xl mx-auto"
-          >
-            Browse through our carefully curated categories to find your perfect style
-          </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-              >
-                <Link to={`/shop?category=${category.name.toLowerCase()}`}>
-                  <div className="aspect-[3/4] relative overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                      <h3 className="text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        {category.name}
-                      </h3>
-                      <p className="text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                        {category.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Featured Categories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categories.map((category, index) => (
+            <motion.div
+              key={category.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative group overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={category.image}
+                alt={category.name}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
+                  <p className="text-sm">{category.description}</p>
+                </div>
+              </div>
+              <Link to={`/shop?category=${category.name.toLowerCase()}`} className="absolute inset-0" />
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-primary text-white">
+      <div className="bg-gray-100 py-16">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <h2 className="text-3xl font-bold mb-4">Join Our Newsletter</h2>
-            <p className="mb-8 text-white/90">
-              Subscribe to get special offers, free giveaways, and updates. Don't miss out!
-            </p>
-            <form className="flex gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="input flex-1"
-              />
-              <button type="submit" className="btn btn-secondary">
-                Subscribe
-              </button>
-            </form>
-          </motion.div>
+          <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+          <p className="text-gray-600 mb-8">Stay updated with our latest collections and exclusive offers</p>
+          <form className="max-w-md mx-auto flex gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"
+            />
+            <button
+              type="submit"
+              className="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition-colors"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
