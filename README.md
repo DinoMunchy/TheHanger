@@ -1,38 +1,31 @@
-# The Hanger - Women's Boutique Website
+# TheHanger - Modern Fashion E-commerce Website
 
-A modern, animated women's boutique website built with React, featuring smooth transitions and a beautiful user interface.
+A modern, responsive e-commerce website built with React, Vite, and Tailwind CSS. TheHanger offers a seamless shopping experience with features like product browsing, cart management, and a clean, professional design.
 
 ## Features
 
-- 🎨 Modern and responsive design
-- ✨ Smooth animations and transitions using Framer Motion
-- 🛍️ Product showcase with filtering capabilities
-- 📱 Mobile-friendly navigation
-- 🎯 Beautiful UI components with Tailwind CSS
-- 🔄 React Router for seamless navigation
+- 🛍️ Product browsing with category filters
+- 🔍 Search functionality
+- 🛒 Shopping cart with real-time updates
+- 📱 Responsive design for all devices
+- ⚡ Fast performance with Vite
+- 🎨 Modern UI with Tailwind CSS
+- 🔄 Smooth animations with Framer Motion
 
-## Tech Stack
+## Technologies Used
 
 - React
 - Vite
-- Framer Motion
-- React Router
 - Tailwind CSS
-- Hero Icons
+- React Router
+- Framer Motion
+- Heroicons
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/thehanger.git
-cd thehanger
+git clone [your-repo-url]
 ```
 
 2. Install dependencies:
@@ -45,25 +38,27 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Build for production:
+```bash
+npm run build
+```
 
 ## Project Structure
 
 ```
-src/
-├── components/     # Reusable components
-├── pages/         # Page components
-├── App.jsx        # Main application component
-└── index.css      # Global styles
+TheHanger/
+├── src/
+│   ├── components/      # Reusable components
+│   ├── pages/          # Page components
+│   ├── context/        # React context providers
+│   └── images/         # Static images
+├── public/             # Public assets
+└── package.json        # Project dependencies
 ```
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
