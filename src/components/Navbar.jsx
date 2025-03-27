@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBagIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ShoppingBagIcon, Bars3Icon, XMarkIcon, UserIcon } from '@heroicons/react/24/outline';
 import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { getCartItemsCount } = useCart();
+  const { getCartItemsCount, cartItems } = useCart();
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,11 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
+
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <>
@@ -79,10 +85,38 @@ const Navbar = () => {
                 )}
               </Link>
 
+              {/* User Menu */}
+              <div className="relative">
+                <button
+                  onClick={toggleUserMenu}
+                  className="text-gray-700 hover:text-pink-600 transition-colors"
+                >
+                  <UserIcon className="h-6 w-6" />
+                </button>
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                    <Link
+                      to="/login"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50"
+                      onClick={() => setIsUserMenuOpen(false)}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50"
+                      onClick={() => setIsUserMenuOpen(false)}
+                    >
+                      Create Account
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {/* Mobile Menu Button */}
               <button
                 className="md:hidden p-2"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                onClick={toggleMenu}
               >
                 {isMobileMenuOpen ? (
                   <XMarkIcon className="w-8 h-8" />
@@ -104,17 +138,31 @@ const Navbar = () => {
               className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4"
             >
               <div className="container mx-auto px-4 flex flex-col space-y-4">
-                <MobileNavLink to="/" current={location.pathname}>
+                <MobileNavLink to="/" current={location.pathname} onClick={toggleMenu}>
                   Home
                 </MobileNavLink>
-                <MobileNavLink to="/shop" current={location.pathname}>
+                <MobileNavLink to="/shop" current={location.pathname} onClick={toggleMenu}>
                   Shop
                 </MobileNavLink>
-                <MobileNavLink to="/about" current={location.pathname}>
+                <MobileNavLink to="/about" current={location.pathname} onClick={toggleMenu}>
                   About
                 </MobileNavLink>
-                <MobileNavLink to="/contact" current={location.pathname}>
+                <MobileNavLink to="/contact" current={location.pathname} onClick={toggleMenu}>
                   Contact
+                </MobileNavLink>
+                <MobileNavLink to="/cart" current={location.pathname} onClick={toggleMenu}>
+                  Cart
+                  {cartItemCount > 0 && (
+                    <span className="ml-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartItemCount}
+                    </span>
+                  )}
+                </MobileNavLink>
+                <MobileNavLink to="/login" current={location.pathname} onClick={toggleMenu}>
+                  Sign In
+                </MobileNavLink>
+                <MobileNavLink to="/signup" current={location.pathname} onClick={toggleMenu}>
+                  Create Account
                 </MobileNavLink>
               </div>
             </motion.div>
@@ -145,12 +193,13 @@ const NavLink = ({ to, current, children }) => (
   </Link>
 );
 
-const MobileNavLink = ({ to, current, children }) => (
+const MobileNavLink = ({ to, current, children, onClick }) => (
   <Link
     to={to}
     className={`text-lg font-medium py-2 ${
       current === to ? 'text-primary' : 'text-gray-800 hover:text-primary'
     }`}
+    onClick={onClick}
   >
     {children}
   </Link>
