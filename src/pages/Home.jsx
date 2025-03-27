@@ -45,9 +45,9 @@ const Home = () => {
                 className="mb-8"
               >
                 <img 
-                  src="/TheHanger/images/the hanger.png" 
+                  src="/TheHanger/images/The_Hanger_Homepage.png" 
                   alt="TheHanger Logo" 
-                  className="h-48 w-auto mx-auto md:mx-0"
+                  className="h-72 w-auto mx-auto md:mx-0"
                 />
               </motion.div>
               <motion.h1 
