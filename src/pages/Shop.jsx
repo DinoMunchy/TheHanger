@@ -43,19 +43,10 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen bg-pink-100">
-      {/* Hero Section */}
-      <div className="relative h-[400px] w-full overflow-hidden">
-        <img
-          src="/images/store-hero.jpg"
-          alt="Women's Fashion Store"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Collection</h1>
-            <p className="text-xl md:text-2xl">Discover our latest trends in women's fashion</p>
-          </div>
-        </div>
+      {/* Header */}
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold text-center mb-8">Our Collection</h1>
+        <p className="text-xl text-gray-600 text-center mb-12">Discover our latest trends in women's fashion</p>
       </div>
 
       {/* Filters and Search */}
