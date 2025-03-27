@@ -51,7 +51,7 @@ const Navbar = () => {
               <img
                 src="/TheHanger/images/the hanger.png"
                 alt="TheHanger Logo"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
 
@@ -68,6 +68,9 @@ const Navbar = () => {
               </NavLink>
               <NavLink to="/contact" current={location.pathname}>
                 Contact
+              </NavLink>
+              <NavLink to="/rewards" current={location.pathname}>
+                Rewards
               </NavLink>
             </div>
 
@@ -147,6 +150,9 @@ const Navbar = () => {
                 <MobileNavLink to="/contact" current={location.pathname} onClick={toggleMenu}>
                   Contact
                 </MobileNavLink>
+                <MobileNavLink to="/rewards" current={location.pathname} onClick={toggleMenu}>
+                  Rewards
+                </MobileNavLink>
                 <MobileNavLink to="/cart" current={location.pathname} onClick={toggleMenu}>
                   Cart
                   {cartItemCount > 0 && (
@@ -171,14 +177,14 @@ const NavLink = ({ to, current, children }) => (
   <Link
     to={to}
     className={`relative font-medium text-lg transition-colors ${
-      current === to ? 'text-primary' : 'hover:text-primary'
+      current === to ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'
     }`}
   >
     {children}
     {current === to && (
       <motion.div
         layoutId="underline"
-        className="absolute left-0 right-0 h-0.5 bg-primary -bottom-2"
+        className="absolute left-0 right-0 h-0.5 bg-pink-600 -bottom-2"
       />
     )}
   </Link>
@@ -188,7 +194,7 @@ const MobileNavLink = ({ to, current, children, onClick }) => (
   <Link
     to={to}
     className={`text-lg font-medium py-2 ${
-      current === to ? 'text-primary' : 'text-gray-800 hover:text-primary'
+      current === to ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'
     }`}
     onClick={onClick}
   >
