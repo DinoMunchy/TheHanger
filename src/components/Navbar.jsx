@@ -36,27 +36,27 @@ const Navbar = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isScrolled ? 1 : 0 }}
-        className="fixed top-0 left-0 right-0 h-48 bg-white shadow-md z-40 transition-opacity duration-300"
+        className="fixed top-0 left-0 right-0 h-12 bg-white shadow-md z-40 transition-opacity duration-300"
       />
 
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50"
+        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-40">
+          <div className="flex items-center justify-between h-12">
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
                 src="/TheHanger/images/the hanger.png"
                 alt="TheHanger Logo"
-                className="h-20 w-auto"
+                className="h-8 w-auto"
               />
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-12">
+            <div className="hidden md:flex items-center space-x-8">
               <NavLink to="/" current={location.pathname}>
                 Home
               </NavLink>
@@ -74,9 +74,9 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               {/* Cart Link */}
               <Link to="/cart" className="relative flex items-center">
-                <ShoppingBagIcon className="h-6 w-6 text-gray-700 hover:text-pink-600 transition-colors" />
+                <ShoppingBagIcon className="h-5 w-5 text-gray-700 hover:text-pink-600 transition-colors" />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                     {cartItemCount}
                   </span>
                 )}
@@ -88,10 +88,10 @@ const Navbar = () => {
                   onClick={toggleUserMenu}
                   className="text-gray-700 hover:text-pink-600 transition-colors"
                 >
-                  <UserIcon className="h-6 w-6" />
+                  <UserIcon className="h-5 w-5" />
                 </button>
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                  <div className="absolute right-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg py-1">
                     <Link
                       to="/login"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50"
@@ -112,13 +112,13 @@ const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2"
+                className="md:hidden"
                 onClick={toggleMenu}
               >
                 {isMobileMenuOpen ? (
-                  <XMarkIcon className="w-8 h-8" />
+                  <XMarkIcon className="w-6 h-6" />
                 ) : (
-                  <Bars3Icon className="w-8 h-8" />
+                  <Bars3Icon className="w-6 h-6" />
                 )}
               </button>
             </div>
@@ -132,9 +132,9 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4"
+              className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-2"
             >
-              <div className="container mx-auto px-4 flex flex-col space-y-4">
+              <div className="container mx-auto px-4 flex flex-col space-y-2">
                 <MobileNavLink to="/" current={location.pathname} onClick={toggleMenu}>
                   Home
                 </MobileNavLink>
@@ -150,7 +150,7 @@ const Navbar = () => {
                 <MobileNavLink to="/cart" current={location.pathname} onClick={toggleMenu}>
                   Cart
                   {cartItemCount > 0 && (
-                    <span className="ml-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    <span className="ml-2 bg-pink-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                       {cartItemCount}
                     </span>
                   )}
@@ -168,7 +168,7 @@ const Navbar = () => {
       </motion.nav>
 
       {/* Spacer to prevent content from going under navbar */}
-      <div className="h-40" />
+      <div className="h-12"></div>
     </>
   );
 };
