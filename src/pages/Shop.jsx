@@ -42,7 +42,7 @@ const Shop = () => {
     });
 
   return (
-    <div className="min-h-screen bg-pink-50">
+    <div className="min-h-screen bg-pink-100">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
@@ -69,7 +69,7 @@ const Shop = () => {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-pink-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-pink-100'
+                    : 'bg-white text-gray-700 hover:bg-pink-200'
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}

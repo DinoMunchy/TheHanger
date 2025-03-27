@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-pink-50">
+    <div className="min-h-screen bg-pink-100">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
