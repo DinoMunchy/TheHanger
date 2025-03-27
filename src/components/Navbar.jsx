@@ -155,12 +155,6 @@ const Navbar = () => {
                     </span>
                   )}
                 </MobileNavLink>
-                <MobileNavLink to="/login" current={location.pathname} onClick={toggleMenu}>
-                  Sign In
-                </MobileNavLink>
-                <MobileNavLink to="/signup" current={location.pathname} onClick={toggleMenu}>
-                  Create Account
-                </MobileNavLink>
               </div>
             </motion.div>
           )}
