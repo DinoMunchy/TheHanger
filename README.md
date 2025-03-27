@@ -11,6 +11,8 @@ A modern, responsive e-commerce website built with React, Vite, and Tailwind CSS
 - ⚡ Fast performance with Vite
 - 🎨 Modern UI with Tailwind CSS
 - 🔄 Smooth animations with Framer Motion
+- 🎨 Modern UI with smooth animations
+- 🔒 Secure checkout process
 
 ## Technologies Used
 
@@ -20,16 +22,18 @@ A modern, responsive e-commerce website built with React, Vite, and Tailwind CSS
 - React Router
 - Framer Motion
 - Heroicons
+- Context API
 
 ## Getting Started
 
 1. Clone the repository:
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/DinoMunchy/TheHanger.git
 ```
 
 2. Install dependencies:
 ```bash
+cd TheHanger
 npm install
 ```
 
@@ -62,4 +66,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Deployment
+
+The site is deployed on GitHub Pages at: https://dinomunchy.github.io/TheHanger/ 
