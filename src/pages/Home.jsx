@@ -38,6 +38,18 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="text-center md:text-left"
             >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="mb-8"
+              >
+                <img 
+                  src="/TheHanger/images/the hanger.png" 
+                  alt="TheHanger Logo" 
+                  className="h-48 w-auto mx-auto md:mx-0"
+                />
+              </motion.div>
               <motion.h1 
                 className="text-5xl md:text-6xl font-bold text-neutral-dark mb-6 leading-tight"
                 initial={{ opacity: 0, y: 20 }}

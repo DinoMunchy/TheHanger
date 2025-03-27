@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBagIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCart } from '../context/CartContext';
-import logoImage from '../../images/the hanger.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +42,10 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-40">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img 
-                src={logoImage} 
-                alt="TheHanger Logo" 
-                className="h-32 w-auto hover:scale-105 transition-transform duration-300"
+              <img
+                src="/TheHanger/images/the hanger.png"
+                alt="TheHanger Logo"
+                className="h-20 w-auto"
               />
             </Link>
 
