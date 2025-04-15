@@ -2,6 +2,8 @@
 
 A modern, responsive e-commerce website built with React, Vite, and Tailwind CSS. TheHanger offers a seamless shopping experience with features like product browsing, cart management, and a clean, professional design.
 
+To view the full site follow this link: https://dinomunchy.github.io/TheHanger/
+
 ## Features
 
 - 🛍️ Product browsing with category filters
